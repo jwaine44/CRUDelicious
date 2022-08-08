@@ -1,0 +1,59 @@
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDelicious</title>
+</head>
+<body>
+    <a asp-controller = "Dish" asp-action = "Index">Home</a>
+    <h1>Edit @Model.Name</h1>
+    <form asp-controller = "Dish" asp-action = "EditDish" asp-route-dishId = "@Model.DishId" method = "POST">
+        <div>
+            <label asp-for = "Chef"></label>
+                <div>
+                    <input asp-for = "Chef" value = "@Model.Chef" />
+                </div>
+            <span asp-validation-for = "Chef"></span>
+        </div>
+        <div>
+            <label asp-for = "Name"></label>
+                <div>
+                    <input asp-for = "Name" value = "@Model.Name" />
+                </div>
+            <span asp-validation-for = "Name"></span>
+        </div>
+        <div>
+            <label asp-for = "Calories"></label>
+                <div>
+                    <input asp-for = "Calories" value = "@Model.Calories" />
+                </div>
+            <span asp-validation-for = "Calories"></span>
+        </div>
+        <div>
+            <label asp-for = "Tastiness"></label>
+                <div>
+                    <select asp-for = "Tastiness">
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                    </select>
+                </div>
+            <span asp-validation-for = "Tastiness"></span>
+        </div>
+        <div>
+            <label asp-for = "Description"></label>
+                <div>
+                    <textarea asp-for = "Description">@Model.Description</textarea>
+                </div>
+            <span asp-validation-for = "Description"></span>
+        </div>
+        <button>Edit Dish</button>
+    </form>
+</body>
+</html>

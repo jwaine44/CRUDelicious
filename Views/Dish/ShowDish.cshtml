@@ -1,0 +1,21 @@
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDelicious</title>
+</head>
+<body>
+    <a asp-controller = "Dish" asp-action = "Index">Home</a>
+    <h1>@Model.Name</h1>
+    <h3>@Model.Chef</h3>
+    <p>@Model.Description</p>
+    <p>Calories: @Model.Calories</p>
+    <p>Tastiness: @Model.Tastiness</p>
+    <a href = "/delete/@Model.DishId"><button>Delete</button></a>
+    <a href = "/edit/@Model.DishId"><button>Edit</button></a>
+</body>
+</html>

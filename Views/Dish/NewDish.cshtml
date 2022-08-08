@@ -1,0 +1,59 @@
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDelicious</title>
+</head>
+<body>
+    <h1>Add a new Dish!</h1>
+    <a asp-controller = "Dish" asp-action = "Index">Home</a>
+    <form asp-controller = "Dish" asp-action = "CreateDish" method = "POST">
+        <div>
+            <label asp-for = "Chef"></label>
+                <div>
+                    <input asp-for = "Chef" />
+                </div>
+            <span asp-validation-for = "Chef"></span>
+        </div>
+        <div>
+            <label asp-for = "Name"></label>
+                <div>
+                    <input asp-for = "Name" />
+                </div>
+            <span asp-validation-for = "Name"></span>
+        </div>
+        <div>
+            <label asp-for = "Calories"></label>
+                <div>
+                    <input asp-for = "Calories" />
+                </div>
+            <span asp-validation-for = "Calories"></span>
+        </div>
+        <div>
+            <label asp-for = "Tastiness"></label>
+                <div>
+                    <select asp-for = "Tastiness">
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                    </select>
+                </div>
+            <span asp-validation-for = "Tastiness"></span>
+        </div>
+        <div>
+            <label asp-for = "Description"></label>
+                <div>
+                    <textarea asp-for = "Description"></textarea>
+                </div>
+            <span asp-validation-for = "Description"></span>
+        </div>
+        <button>Add Dish</button>
+    </form>
+</body>
+</html>
